@@ -234,7 +234,7 @@ ob_start();
         try {
             mkdir($this->cached_image_directory, 0777, true);
         } catch (Exception $e) {
-            $this->error('There was an error creating the new directory:', $e);
+            $this->error('There was an error creating the new directory: ', $e);
             return false;
         }
         return true;
