@@ -140,6 +140,8 @@ class ImageCache {
         $this->cached_directory_version = $this->options->cached_directory_version;
         $this->check_link_cached = $this->options->check_link_cached;
 
+        $this->make_cache_directory();
+
         return $this;
     }
 
@@ -230,7 +232,7 @@ ob_start();
             return true;
         }
         try {
-            mkdir($this->cached_image_directory);
+            mkdir($this->cached_image_directory, 0777, true);
         } catch (Exception $e) {
             $this->error('There was an error creating the new directory:', $e);
             return false;
