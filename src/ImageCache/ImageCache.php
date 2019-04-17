@@ -167,7 +167,7 @@ class ImageCache {
     public function cache($image, $version = "") {
 ob_start();
         if ( ! is_writable($this->cached_image_directory))
-            $this->error( $this->cached_image_directory . ' must writable!');
+            $this->error( $this->cached_image_directory . ' must be writable!');
 
         if (!is_string($image))
             $this->error('Image source given must be a string.');
