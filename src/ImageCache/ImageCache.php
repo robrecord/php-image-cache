@@ -189,9 +189,9 @@ ob_start();
             ob_end_clean();
             return $this->docroot_to_url();
         }
-        if ($this->is_remote) {
-            $this->download_image();
-        }
+        // if ($this->is_remote) {
+        //     $this->download_image();
+        // }
         if (!$this->fetch_image())
             $this->error('Could not copy image resource.');
         $this->src_filesize = filesize($this->image_src);
