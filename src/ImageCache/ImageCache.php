@@ -65,7 +65,7 @@ class ImageCache {
 
     /**
      * The compression's output quality
-     * @var array 
+     * @var array
      */
     public $quality;
 
@@ -108,7 +108,7 @@ class ImageCache {
      * The extension of the file
      */
     private $cached_filesize;
-    
+
     /**
      * Constructor function
      *
@@ -140,7 +140,8 @@ class ImageCache {
         $this->cached_directory_version = $this->options->cached_directory_version;
         $this->check_link_cached = $this->options->check_link_cached;
 
-        $this->make_cache_directory();
+        if (!$this->make_cache_directory())
+            $this->error('Could not create cached files directory.');
 
         return $this;
     }
